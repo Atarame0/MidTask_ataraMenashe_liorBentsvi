@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>תכנות 3 - JavaScript</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+
+<div>
+    <header>
+    <nav> 
+ <!-- תפריט ניווט -->
+            <button id="nav-button" class="btn-mobile hide" onclick="toggleNav()" style="border: none; background: none; padding: 0;">
+                <img src="img/Hamburger_icon.svg.png" alt="ניווט" style="width: 40px; border: none;">
+              </button>
+              
+            <ul id="main-nav" class="flex-container-nav hide-mobile">
+            <li><a href="#">דף הבית</a></li>
+            <li><a href="#">אודות</a></li>
+            <li><a href="#">עוד חומרים</a></li>
+            <li><a href="#">חומרי העשרה</a></li>
+            </ul>
+        </nav>
+
+
+        <h1>תרופות סבתה לכאבים באוזניים</h1>
+
+     </header>
+       
+
+
+     <!-- תיבת חיפוש עם כפתור-->
+        
+        <div class="container" style="display: flex; align-items: center; padding: 31px;">
+            <input type="search" id="mySearch" placeholder="חיפוש מוצר" style="flex: 1;" oninput="filterItems(this.value)">
+
+            <button onclick="SearchItem()" style="margin-left: 10px; border-right: none;
+            ">
+                &#128269; 
+            </button>
+        </div>
+
+
+        
+        
+        <div class="container" style="display: flex; align-items: center; padding: 31px;">
+       
+        
+            <!-- כפתורי סינון לפי קטגוריות-->
+            <button onclick="filterByCategory('all')">הכל</button>
+            <button onclick="filterByCategory('oil')">שמנים</button>
+            <button onclick="filterByCategory('food')">מאכלים</button>
+            <button onclick="filterByCategory('other')">אחר</button>
+        </div>
+        
+
+ 
+
+
+
+        
+        <!-- פה יוצגו המערכות -->
+        <div id="itemsContainer" class="flex-container-subjects">
+           
+        </div>
+
+
+        <!-- פה יוצג המידע על מערכת שנלחצה -->
+        <div id="chosenItem" class="hide">
+            <p></p>
+            <a></a>
+    
+
+        </div>
+    </div>
+
+
+
+
+
+ <!-- חלונית פופ-אפ שמציגה את אופן השימוש על הפריט הנבחר-->
+
+<div class="modal fade" id="chosenItemModal" tabindex="-1" role="dialog" aria-labelledby="chosenItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeChosenItem()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                
+                <h5 class="modal-title custom-modal-title" id="chosenItemModalLabel">Chosen Item</h5>
+            </div>
+
+            <div class="modal-body">
+                <p id="chosenItemText"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="closeChosenItem()">סגירה</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+</body>
+
+</html>
